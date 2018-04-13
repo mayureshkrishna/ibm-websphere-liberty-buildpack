@@ -19,7 +19,7 @@
 class_name : LibertyBuildpack::Services::ComposeOracle
 class_file : compose_oracle.rb
 server_xml_stanza : dataSource
-service_filter : 'compose-for-oracle'
+service_filter : 'oracle'
 
 # plugin specific attributes
 features:
