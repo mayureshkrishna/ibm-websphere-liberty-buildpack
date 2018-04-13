@@ -59,8 +59,8 @@ module LibertyBuildpack::Services
     # @param jdbc_driver - an array containing all jdbcDriver elements with a given id.
     #------------------------------------------------------------------------------------
     def modify_jdbc_driver(jdbcdrivers)
-      Utils.find_and_update_attribute(jdbcdrivers, 'javax.sql.XADataSource', 'javax.sql.XADataSource')
-      Utils.find_and_update_attribute(jdbcdrivers, 'javax.sql.ConnectionPoolDataSource', 'javax.sql.ConnectionPoolDataSource')
+      Utils.find_and_update_attribute(jdbcdrivers, 'javax.sql.XADataSource', 'oracle.jdbc.xa.OracleXADataSource')
+      Utils.find_and_update_attribute(jdbcdrivers, 'javax.sql.ConnectionPoolDataSource', 'oracle.jdbc.pool.OracleConnectionPoolDataSource')
     end
 
     #------------------------------------------------------------------------------------
@@ -69,7 +69,16 @@ module LibertyBuildpack::Services
     # @param datasources - an array containing all dataSource stanzas with a given id.
     #------------------------------------------------------------------------------------
     def modify_datasource(datasources)
-      Utils.find_and_update_attribute(datasources, 'type', 'javax.sql.ConnectionPoolDataSource')
+      Utils.find_and_update_attribute(datasources, 'type', 'oracle.jdbc.pool.OracleConnectionPoolDataSource')
+    end
+
+    #------------------------------------------------------------------------------------
+    # Method to customize properties - called on create or update.
+    #
+    # @param properties_element - the properties element
+    #------------------------------------------------------------------------------------
+    def modify_properties(properties_element)
+      Utils.find_and_update_attribute(properties_element, 'driverType', 'thin')
     end
 
   end
