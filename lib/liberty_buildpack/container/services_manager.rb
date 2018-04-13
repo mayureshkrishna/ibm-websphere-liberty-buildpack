@@ -352,7 +352,9 @@ module LibertyBuildpack::Container
     def get_service_type(name, service_data)
       # Use filters to find the plugin. Give precedence to a search against the label. If no matches using the label search against the tags.
       candidates = find_service_plugin_by_label(name)
+      @logger.info("Let see if it can process UDS - Service Name #{name}")
       candidates = find_service_plugin_by_tags(service_data) if candidates.empty?
+      @logger.error("DID NOT PARSE ANYTHING FROM FILTER") if candidates.empty?
       return 'default' if candidates.empty?
       return candidates[0] if candidates.length == 1
       # If we reach this point, then the plugin name or filter is ambiguous and a plugin issue exists. There is no way to resolve the plugin satisfactorily. No matter the
