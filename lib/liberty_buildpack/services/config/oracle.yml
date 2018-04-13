@@ -30,6 +30,4 @@ features:
 client_jars : 'ojdbc*.jar'
 connection_pool_size : -1
 
-driver:
-  version: 1.+
-  repository_root: "https://code.google.com/archive/p/afirs/downloads"
+client_jar_url: "https://github.com/mayureshkrishna/jbossjndi-oracle-liberty-pcf/raw/master/pcfliberty/resources/oracle/ojdbc6.jar"
