@@ -77,9 +77,9 @@ module LibertyBuildpack::Services
     #
     # @param properties_element - the properties element
     #------------------------------------------------------------------------------------
-    #def modify_properties(properties_element)
-    #  Utils.find_and_update_attribute(properties_element, 'driverType', 'thin')
-    #end
+    def modify_properties(properties_element)
+      Utils.find_and_update_attribute(properties_element, 'driverType', 'thin')
+    end
 
   end
 end
