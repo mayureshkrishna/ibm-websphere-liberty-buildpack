@@ -178,6 +178,7 @@ module LibertyBuildpack::Services
         properties_element.add_attribute('password', @password)
         properties_element.add_attribute('serverName', @host)
         properties_element.add_attribute('portNumber', @port)
+        @logger.info("GOOD UNTIL HERE")
         modify_properties(properties_element)
         Utils.add_features(doc, @features)
       end
@@ -278,6 +279,7 @@ module LibertyBuildpack::Services
       props.add_attribute('password', @password)
       props.add_attribute('portNumber', @port)
       props.add_attribute('serverName', @host)
+      @logger.info("GOOD UNTIL HERE")
       modify_properties(props)
 
       # allow types that need it to add a ConnectionManager
