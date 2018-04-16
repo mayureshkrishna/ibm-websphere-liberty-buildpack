@@ -179,18 +179,8 @@ module LibertyBuildpack::Services
           found = true
         end
       end
-      LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Replacement for #{name} found #{found} in #{element_array}")
       # Attribute was not found, add it. Add it to last element.
-      element_array.each do |element|
-        if found == false
-          LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Inside IF BLOCK Lets ADD - Name: #{name} Value: #{value} to ELEMENT #{element}")
-          element.add_attribute(name, value)
-          LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Lets Pring ELEMENT after add: #{element}")
-          found = true
-        end
-      end
-
-      LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Resulted Array #{element_array}")
+      element_array[-1].add_attribute(name, value) unless found
     end
 
     #------------------------------------------------------------------------------------
