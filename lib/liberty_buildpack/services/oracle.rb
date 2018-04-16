@@ -69,7 +69,7 @@ module LibertyBuildpack::Services
     # @param datasources - an array containing all dataSource stanzas with a given id.
     #------------------------------------------------------------------------------------
     def modify_datasource(datasources)
-      Utils.find_and_update_attribute(datasources, 'type', 'oracle.jdbc.pool.OracleConnectionPoolDataSource')
+      Utils.find_and_update_attribute(datasources, 'type', 'javax.sql.ConnectionPoolDataSource')
     end
 
     #------------------------------------------------------------------------------------
@@ -78,7 +78,6 @@ module LibertyBuildpack::Services
     # @param properties_element - the properties element
     #------------------------------------------------------------------------------------
     def modify_properties(properties_element)
-      #Utils.find_and_update_attribute(properties_element, 'driverType', 'thin')
       properties_element.add_attribute('driverType', 'thin')
     end
 
