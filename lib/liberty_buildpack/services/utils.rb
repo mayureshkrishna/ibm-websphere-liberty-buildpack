@@ -174,8 +174,6 @@ module LibertyBuildpack::Services
       element_array.each do |element|
         # Liberty allows the logical stanza to be partitioned over multiple physical stanzas. Well-formed xml will declare a given attribute once, at most.
         # We handle xml that is not well formed by searching all partitions and updating all instances, to ensure the value is applied.
-        LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("PRINT ELEMENT #{element}")
-
         unless element.attribute(name).nil?
           element.add_attribute(name, value)
           found = true
@@ -185,7 +183,9 @@ module LibertyBuildpack::Services
       # Attribute was not found, add it. Add it to last element.
       element_array.each do |element|
         if found == false
+          LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Inside IF BLOCK Lets ADD - Name: #{name} Value: #{value} to ELEMENT #{element}")
           element.add_attribute(name, value)
+          LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Lets Pring ELEMENT after add: #{element}")
           found = true
         end
       end
