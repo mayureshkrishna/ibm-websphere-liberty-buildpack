@@ -181,7 +181,7 @@ module LibertyBuildpack::Services
       end
       LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Replacement for #{name} found #{found} in #{element_array}")
       # Attribute was not found, add it. Add it to last element.
-      element_array[-1].add_attribute(name, value) unless found
+      element_array[0].add_attribute(name, value) unless found
       LibertyBuildpack::Diagnostics::LoggerFactory.get_logger.warn("Resulted Array #{element_array}")
     end
 
