@@ -30,4 +30,4 @@ features:
 client_jars : 'ojdbc*.jar'
 connection_pool_size : -1
 
-client_jar_url: "https://github.com/mayureshkrishna/jbossjndi-oracle-liberty-pcf/raw/master/pcfliberty/resources/oracle/ojdbc6.jar"
+client_jar_url: "https://github.com/mayureshkrishna/ibm-websphere-liberty-buildpack/raw/master/resources/oracle/ojdbc6.jar"
