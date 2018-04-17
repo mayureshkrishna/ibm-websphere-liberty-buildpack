@@ -28,6 +28,6 @@ features:
  else: ['jdbc-4.1']
 
 client_jars : 'ojdbc*.jar'
-connection_pool_size : -1
+connection_pool_size : 5
 
 client_jar_url: "https://github.com/mayureshkrishna/ibm-websphere-liberty-buildpack/raw/master/resources/oracle/ojdbc6.jar"
