@@ -49,6 +49,11 @@ module LibertyBuildpack::Services
       cm = REXML::Element.new('connectionManager', ds)
       cm.add_attribute('id', @connection_manager_id)
       cm.add_attribute('maxPoolSize', cp_size)
+      cm.add_attribute('minPoolSize', '0')
+      cm.add_attribute('connectionTimeout', '180')
+      cm.add_attribute('maxIdleTime', '300')
+      cm.add_attribute('agedTimeout', '300')
+      cm.add_attribute('purgePolicy', 'FailingConnectionOnly')
     end
 
     protected
