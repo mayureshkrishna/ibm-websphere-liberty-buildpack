@@ -356,7 +356,7 @@ module LibertyBuildpack::Container
         service_data.each do |service|
           next if service['credentials'].nil?
             cred_service_data = []
-            cred_service_data << service['credentials']
+            cred_service_data = service['credentials']
             @logger.info("Here's the Credential Data #{cred_service_data}")
             if !cred_service_data['type'].nil?
               type = cred_service_data['type']
