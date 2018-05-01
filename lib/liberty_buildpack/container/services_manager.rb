@@ -348,21 +348,16 @@ module LibertyBuildpack::Container
     #-----------------------------------
     def find_service_plugin_by_credentials_type(service_data)
       candidates = []
-      @logger.info("Good Until Here - Service Data #{service_data}")
       @config.each do |key, value|
         filter = value['service_filter']
         unless filter.nil?
         filter = Regexp.new(filter) unless filter.is_a?(Regexp)
-        i = 0
         service_data.each do |service|
-          next if service['credentials'].nil? || if i == 1
+          next if service['credentials'].nil?
             cred_service_data = []
             cred_service_data = service['credentials']
-            @logger.info("Here's the Credential Data #{cred_service_data}")
-            i = 1
             if !cred_service_data['type'].nil?
               type = cred_service_data['type']
-              @logger.info("Here's the Type Data #{type}")
               candidates.push(key) if type =~ filter
             end
           end
