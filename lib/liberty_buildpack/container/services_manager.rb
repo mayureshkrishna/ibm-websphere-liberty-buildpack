@@ -364,7 +364,6 @@ module LibertyBuildpack::Container
             end
           end
         end
-      end
       candidates
     end
 
