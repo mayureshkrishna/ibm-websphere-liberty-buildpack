@@ -353,17 +353,17 @@ module LibertyBuildpack::Container
         filter = value['service_filter']
         unless filter.nil?
         filter = Regexp.new(filter) unless filter.is_a?(Regexp)
-        service_data.each do |service|
-          next if service['credentials'].nil?
+        #service_data.each do |service|
+         # next if service['credentials'].nil?
             cred_service_data = []
-            cred_service_data = service['credentials']
+            cred_service_data = service_data['credentials']
             @logger.info("Here's the Credential Data #{cred_service_data}")
             if !cred_service_data['type'].nil?
               type = cred_service_data['type']
               @logger.info("Here's the Type Data #{type}")
               candidates.push(key) if type =~ filter
             end
-          end
+        #  end
         end
       end
       candidates
