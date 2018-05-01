@@ -348,6 +348,7 @@ module LibertyBuildpack::Container
     #-----------------------------------
     def find_service_plugin_by_credentials_type(service_data)
       candidates = []
+      @logger.debug("Good Until Here - Service Data #{service_data}")
       @config.each do |key, value|
         filter = value['service_filter']
         next if filter.nil?
@@ -363,7 +364,6 @@ module LibertyBuildpack::Container
               candidates.push(key) if type =~ filter
             end
           end
-        end
       candidates
     end
 
