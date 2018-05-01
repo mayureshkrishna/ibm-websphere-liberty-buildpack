@@ -351,7 +351,7 @@ module LibertyBuildpack::Container
       @logger.debug("Good Until Here - Service Data #{service_data}")
       @config.each do |key, value|
         filter = value['service_filter']
-        next if filter.nil?
+        unless filter.nil?
         filter = Regexp.new(filter) unless filter.is_a?(Regexp)
         service_data.each do |service|
           next if service['credentials'].nil?
@@ -364,6 +364,7 @@ module LibertyBuildpack::Container
               candidates.push(key) if type =~ filter
             end
           end
+      end
       candidates
     end
 
