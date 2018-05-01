@@ -364,6 +364,7 @@ module LibertyBuildpack::Container
               candidates.push(key) if type =~ filter
             end
           end
+        end
       end
       candidates
     end
