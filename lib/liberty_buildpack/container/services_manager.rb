@@ -342,6 +342,31 @@ module LibertyBuildpack::Container
       end
       candidates.to_a
     end
+    
+    #-----------------------------------
+    # find the service type by checking the type under credentials
+    #-----------------------------------
+    def find_service_plugin_by_credentials_type(service_data)
+      candidates = []
+      @config.each do |key, value|
+        filter = value['service_filter']
+        next if filter.nil?
+        filter = Regexp.new(filter) unless filter.is_a?(Regexp)
+        service_data.each do |service|
+          next if service['credentials'].nil?
+            cred_service_data = []
+            cred_service_data << service
+            @logger.debug("Here's the Credential Data #{cred_service_data}")
+            if !cred_service_data['type'].nil?
+              type = cred_service_data['type']
+              @logger.debug("Here's the Type Data #{type}")
+              candidates.push(key) if type =~ filter
+            end
+          end
+        end
+      end
+      candidates
+    end
 
     #-----------------------------------
     # find the service type (service plugin) using the vcap_services data
@@ -353,6 +378,7 @@ module LibertyBuildpack::Container
       # Use filters to find the plugin. Give precedence to a search against the label. If no matches using the label search against the tags.
       candidates = find_service_plugin_by_label(name)
       candidates = find_service_plugin_by_tags(service_data) if candidates.empty?
+      candidates = find_service_plugin_by_credentials_type(service_data) if candidates.empty?
       return 'default' if candidates.empty?
       return candidates[0] if candidates.length == 1
       # If we reach this point, then the plugin name or filter is ambiguous and a plugin issue exists. There is no way to resolve the plugin satisfactorily. No matter the
