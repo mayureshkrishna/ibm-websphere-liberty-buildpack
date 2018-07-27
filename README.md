@@ -40,6 +40,7 @@ All Documentation is available in the Docs folder of the buildpack.
     * [DistZip](docs/container-distZip.md)
 * Frameworks
     * [AppDynamics Agent](docs/framework-app_dynamics_agent.md)
+    * [CA APM Agent](docs/framework-caapm_agent.md)
     * [Contrast Security Agent](docs/framework-contrast-security-agent.md)
     * [Dynatrace Appmon Agent](docs/framework-dynatrace_appmon_agent.md)
     * [Dynatrace SaaS/Managed OneAgent](docs/framework-dynatrace_one_agent.md)
@@ -100,6 +101,6 @@ bundle install --gemfile Gemfile.rubymine-debug
 [tuning options]: docs/tuning.md
 [java main push]: docs/java-main.md
 
-[Liberty-License]: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/18.0.0.1/lafiles/runtime/en.html
-[JVM-License]: http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?la_formnum=&li_formnum=L-PMAA-A3Z8P2&title=IBM%AE+SDK%2C+Java%99+Technology+Edition%2C+Version+8.0&l=en
+[Liberty-License]: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/18.0.0.2/lafiles/runtime/en.html
+[JVM-License]: http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?la_formnum=&li_formnum=L-SMKR-AVSEUH&title=IBM%AE+SDK%2C+Java%99+Technology+Edition%2C+Version+8.0&l=en
 [manifest documentation]: http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
