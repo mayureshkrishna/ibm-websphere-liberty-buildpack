@@ -52,7 +52,7 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    yard (0.9.5)
+    yard (0.9.20)
 
 PLATFORMS
   ruby
@@ -67,7 +67,7 @@ DEPENDENCIES
   simplecov-rcov
   tee
   webmock
-  yard
+  yard (>= 0.9.20)
 
 BUNDLED WITH
-   1.12.5
+   1.17.3

@@ -5,7 +5,7 @@ group :development do
   gem 'redcarpet'
   gem 'rainbow', '~> 2.1.0'
   gem 'rubocop', '~> 0.42.0'
-  gem 'yard'
+  gem 'yard', '>= 0.9.20'
 end
 
 group :development, :test do
