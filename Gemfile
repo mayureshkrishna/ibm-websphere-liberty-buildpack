@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'rake'
+  gem 'rake', '>= 12.3.3'
   gem 'redcarpet'
   gem 'rainbow', '~> 2.1.0'
   gem 'rubocop', '~> 0.42.0'
