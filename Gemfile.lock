@@ -16,7 +16,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     rainbow (2.1.0)
-    rake (11.2.2)
+    rake (13.0.1)
     redcarpet (3.3.4)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
@@ -60,7 +60,7 @@ PLATFORMS
 DEPENDENCIES
   ci_reporter
   rainbow (~> 2.1.0)
-  rake
+  rake (>= 12.3.3)
   redcarpet
   rspec
   rubocop (~> 0.42.0)
@@ -70,4 +70,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.12.5
+   1.17.3
