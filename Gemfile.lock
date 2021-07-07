@@ -1,23 +1,26 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.4.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     ast (2.3.0)
     builder (3.2.2)
     ci_reporter (2.0.0)
       builder (>= 2.1.2)
-    crack (0.4.3)
-      safe_yaml (~> 1.0.0)
+    crack (0.4.5)
+      rexml
     diff-lcs (1.2.5)
     docile (1.1.5)
-    hashdiff (0.3.0)
+    hashdiff (1.0.1)
     json (2.0.2)
     parser (2.3.1.2)
       ast (~> 2.2)
     powerpack (0.1.1)
+    public_suffix (4.0.6)
     rainbow (2.1.0)
     rake (11.2.2)
     redcarpet (3.3.4)
+    rexml (3.2.5)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -38,7 +41,6 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    safe_yaml (1.0.4)
     simplecov (0.12.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -48,10 +50,10 @@ GEM
       simplecov (>= 0.4.1)
     tee (1.0.0)
     unicode-display_width (1.1.0)
-    webmock (2.1.0)
+    webmock (3.13.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-      hashdiff
+      hashdiff (>= 0.4.0, < 2.0.0)
     yard (0.9.5)
 
 PLATFORMS
@@ -66,8 +68,8 @@ DEPENDENCIES
   rubocop (~> 0.42.0)
   simplecov-rcov
   tee
-  webmock
+  webmock (>= 2.1.0)
   yard
 
 BUNDLED WITH
-   1.12.5
+   1.17.3
