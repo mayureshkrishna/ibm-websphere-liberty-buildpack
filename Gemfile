@@ -13,7 +13,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'webmock'
+  gem 'webmock', '>= 2.1.0'
   gem 'simplecov-rcov'
   gem 'ci_reporter'
   gem 'tee'
