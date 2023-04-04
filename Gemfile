@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'rake'
-  gem 'redcarpet'
+  gem 'rake', '>= 12.3.3'
+  gem 'redcarpet', '>= 3.5.1'
   gem 'rainbow', '~> 2.1.0'
-  gem 'rubocop', '~> 0.42.0'
-  gem 'yard'
+  gem 'rubocop', '~> 0.49.0'
+  gem 'yard', '>= 0.9.20'
 end
 
 group :development, :test do
