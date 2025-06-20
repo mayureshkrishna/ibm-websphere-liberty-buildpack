@@ -14,7 +14,7 @@ end
 
 group :test do
   gem 'webmock'
-  gem 'simplecov-rcov'
+  gem 'simplecov-rcov', '>= 0.3.0'
   gem 'ci_reporter'
   gem 'tee'
 end
